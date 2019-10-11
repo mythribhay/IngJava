@@ -18,4 +18,14 @@ public class GlobalExceptionHandler {
 
 	}
 
+	@ExceptionHandler(MortgageNotFoundException.class)
+	public ResponseEntity<ErrorResponse> globalExceptionHandler(MortgageNotFoundException exception) {
+
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+
+	}
+	
 }

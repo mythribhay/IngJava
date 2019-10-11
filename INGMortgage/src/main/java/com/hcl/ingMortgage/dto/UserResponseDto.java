@@ -19,4 +19,5 @@ public class UserResponseDto {
 	private LocalDate dob;
 	private Long contact;
 	private String address;
+	
 }

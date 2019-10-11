@@ -33,7 +33,8 @@ public class UserController {
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserResponseDto> getUser(@PathVariable Integer userId){
 
-		logger.info(":: Enter into MortgageController--------::getUser()");
+	
+		logger.info(":: Enter into UserController--------::getUser()");
 		return new ResponseEntity<>(userService.fetchUserDetails(userId),HttpStatus.OK);
 		
 	}
